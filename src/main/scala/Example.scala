@@ -19,7 +19,8 @@ object Example extends App {
   val valid: ValidatedNel[String, Int] = Validated.valid(1)
   val invalid: ValidatedNel[String, Int] = Validated.invalidNel("errrr")
 
-  Log.TRACE()
+  // TRACE logging seems to fix some issue internally and makes it pass:
+  // Log.TRACE() // un-comment to see run pass properly
   
   // These lines make the JVM crash
   val v1 = ValidatedWrapper(valid)
